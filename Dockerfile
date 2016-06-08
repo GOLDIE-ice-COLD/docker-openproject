@@ -1,10 +1,10 @@
 FROM       progtologist/ruby
-MAINTAINER Aris Synodinos <arissynod@gmail.com>
+MAINTAINER Alberto Berti <alberto@metapensiero.it>
 
 # Set up application user 'openproject' and check out source
 RUN adduser openproject --home /home/openproject --shell /bin/bash --disabled-password --gecos "" &&\
     mkdir -p /var/www/openproject &&\
-    git clone https://github.com/opf/openproject.git -b v5.0.15 --single-branch /var/www/openproject &&\
+    git clone https://github.com/opf/openproject.git -b v5.0.18 --depth=1 /var/www/openproject &&\
     mkdir -p /var/www/openproject/docker/scripts
 
 COPY Gemfile.local /var/www/openproject/
