@@ -15,7 +15,7 @@ usage (including data-only container):
 ```
 docker run -d --name openproject-postgres-data -v /data busybox true
 docker run -d --name openproject-postgres --volumes-from openproject-postgres-data -e USER=super -e PASS=password paintedfox/postgresql
-docker run -d --name openproject --link openproject-postgres:postgres -p 8080:80 -e SMTP_USERNAME=test@gmail.com -e SMTP_PASSWORD=password -e SMTP_HOST=your.smtp.server -h name.of.your.openproject.host azazel/openproject
+docker run -d --name openproject --link openproject-postgres:postgres -p 8080:80 -e SMTP_USERNAME=test@gmail.com -e SMTP_PASSWORD=password -e SMTP_HOST=your.smtp.server -h name.of.your.openproject.host azazel/docker-openproject
 ```
 
 Wait a little while for the database setup and migrations to run.  After a
