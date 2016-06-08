@@ -40,5 +40,8 @@ RUN chown -R openproject:openproject /etc/nginx/sites-available &&\
 ADD supervisord/rails.conf       /etc/supervisor/conf.d/
 ADD supervisord/nginx.conf       /etc/supervisor/conf.d/
 ADD supervisord/delayed_job.conf /etc/supervisor/conf.d/
+ADD supervisord/incoming_emails.conf /etc/supervisor/conf.d/
+
+VOLUME /var/www/openproject/files
 
 CMD ["/var/www/openproject/docker/scripts/start_application.sh"]
