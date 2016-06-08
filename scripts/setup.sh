@@ -5,8 +5,6 @@ source /etc/profile.d/ruby.sh
 cd /var/www/openproject &&\
   echo -e "\nGenerating secret token..." &&\
   echo "export SECRET_KEY_BASE=`./bin/rake secret`" >> ~/.profile &&\
-  echo "export GMAIL_USERNAME=$GMAIL_USERNAME" >> ~/.profile &&\
-  echo "export GMAIL_PASSWORD=$GMAIL_PASSWORD" >> ~/.profile &&\
   source ~/.profile &&\
   echo -e "\nCreating database..." &&\
   PGPASSWORD=$POSTGRES_ENV_PASS psql -h $POSTGRES_PORT_5432_TCP_ADDR -d postgres -f /var/www/openproject/docker/scripts/create_database.sql -U $POSTGRES_ENV_USER &&\
